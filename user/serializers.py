@@ -8,6 +8,12 @@ class UserSerializer(serializers.ModelSerializer):
         required=True,
         validators = [UniqueValidator(queryset=User.objects.all())]
         )
+    
+
+    password = serializers.CharField(
+        required = False,
+        write_only = True,
+    )
     class Meta:
         model = User
         exclude = [
