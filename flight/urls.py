@@ -1,12 +1,18 @@
-from django.urls import path , include
+from django.urls import path
 
-urlpatterns = []
+# '/flight/':
+urlpatterns = [
+]
 
-
-# # ---------- Router -----------
-# from rest_framework.routers import DefaultRouter
-# from .views import UserView, UserCreateView
-# router = DefaultRouter()
-# router.register('create', UserCreateView) # permissions.AllowAny
-# router.register('', UserView) # permissions.IsAdminUser
-# urlpatterns += router.urls 
+# ---------- Router ----------
+from rest_framework.routers import DefaultRouter
+from .views import (
+    PassengerView,
+    FlightView,
+    ReservationView
+)
+router = DefaultRouter()
+router.register('passenger', PassengerView)
+router.register('flight', FlightView)
+router.register('reservation', ReservationView)
+urlpatterns += router.urls
