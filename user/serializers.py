@@ -39,7 +39,7 @@ class UserSerializer(serializers.ModelSerializer):
         return super().validate(attrs) # Orjinal methodu çalıştır.
     
 
-#-------------- TokenSerializer ---------------
+#-------------- UserTokenSerializer ---------------
 from dj_rest_auth.serializers import TokenSerializer
 
 class UserTokenSerializer(TokenSerializer):
