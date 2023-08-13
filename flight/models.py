@@ -75,7 +75,7 @@ class Flight(FixModel):
 # -----------------------------------------------------------
 class Reservation(FixModel):
     flight = models.ForeignKey(Flight, on_delete=models.CASCADE)
-    passenger = models.ManyToManyField(Passenger, blank=True)
+    passenger = models.ManyToManyField(Passenger)
 
     def __str__(self):
         return f'{self.flight} [{self.passenger.count()}]'
